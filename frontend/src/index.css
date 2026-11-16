@@ -1,0 +1,454 @@
+/* VELVI NATURALS — Master Design System & Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --cream: #f6f1e7;
+  --cream-deep: #efe6d4;
+  --paper: #fffcf7;
+  --white: #ffffff;
+  --forest: #1c3b2c;
+  --forest-deep: #10241b;
+  --leaf: #2f6d45;
+  --leaf-hover: #245737;
+  --sage: #8eaf86;
+  --gold: #a56b2d;
+  --gold-soft: #e7d3b0;
+  --ink: #1c3328;
+  --muted: #44584d;
+  --line: rgba(28, 59, 44, 0.12);
+  --shadow: 0 20px 45px rgba(28, 59, 44, 0.08);
+  --shadow-sm: 0 4px 12px rgba(28, 59, 44, 0.05);
+  --shadow-lg: 0 25px 60px rgba(28, 59, 44, 0.12);
+  --nav-h: 76px;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background-color: var(--cream);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .brand-name {
+  font-family: var(--serif);
+  color: var(--forest);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--leaf);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--forest);
+}
+
+/* ── BUTTONS ────────────────────────────────────────── */
+.btn-velvi {
+  background: var(--forest);
+  color: var(--cream) !important;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--forest);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(28, 59, 44, 0.15);
+  cursor: pointer;
+}
+
+.btn-velvi:hover {
+  background: var(--forest-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(28, 59, 44, 0.25);
+}
+
+.btn-velvi-outline {
+  background: transparent;
+  color: var(--forest) !important;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--forest);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-velvi-outline:hover {
+  background: var(--forest);
+  color: var(--cream) !important;
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--white) !important;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  background: #8e5820;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.velvi-nav {
+  background: rgba(246, 241, 231, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  padding: 0.85rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-left: 0.6rem;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--forest);
+}
+
+.brand-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--leaf);
+}
+
+.nav-link {
+  color: var(--forest) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--leaf) !important;
+}
+
+.nav-badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background: var(--leaf);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* ── PRODUCT CARD ───────────────────────────────────── */
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: rgba(47, 109, 69, 0.3);
+}
+
+.product-img-wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+  padding-top: 100%;
+}
+
+.product-img-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img-wrap img {
+  transform: scale(1.05);
+}
+
+.wishlist-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border: 1px solid var(--line);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.1);
+  color: #e74c3c;
+}
+
+.badge-discount {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--leaf);
+  color: white;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.product-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.price-current {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.price-original {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  color: var(--muted);
+  margin-left: 0.5rem;
+}
+
+/* ── SECTIONS ───────────────────────────────────────── */
+.section {
+  padding: 5rem 0;
+}
+
+.band-white {
+  background: var(--white);
+}
+
+.band-cream-deep {
+  background: var(--cream-deep);
+}
+
+.kicker {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: var(--leaf);
+  margin-bottom: 0.5rem;
+}
+
+/* ── WHATSAPP FLOATING BUTTON ────────────────────────── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  color: white !important;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  background: var(--forest-deep);
+  color: var(--cream);
+  padding: 4.5rem 0 2rem;
+  margin-top: auto;
+}
+
+.site-footer a {
+  color: rgba(246, 241, 231, 0.8);
+  font-size: 0.95rem;
+}
+
+.site-footer a:hover {
+  color: var(--white);
+}
+
+.footer-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-base {
+  border-top: 1px solid rgba(246, 241, 231, 0.1);
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* ── ADMIN DASHBOARD STYLES ──────────────────────────── */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 260px;
+  background: var(--forest);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+}
+
+.admin-sidebar a {
+  color: rgba(246, 241, 231, 0.8);
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.admin-sidebar a:hover,
+.admin-sidebar a.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-left-color: var(--sage);
+}
+
+.admin-content {
+  flex-grow: 1;
+  background: #f8faf9;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.stat-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--forest);
+  margin: 0.5rem 0 0;
+}
+
+/* Responsive utilities */
+@media (max-width: 991px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .section {
+    padding: 3rem 0;
+  }
+}

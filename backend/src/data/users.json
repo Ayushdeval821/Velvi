@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "admin_velvi_001",
+    "name": "Velvi Administrator",
+    "email": "admin@velvinaturals.com",
+    "password": "$2a$10$feu4xtjqQxR52mmf7hBxluwC5w7lVz4KKC.QO7.ad5C4EV5nAh3D2",
+    "phone": "+919451155771",
+    "role": "admin",
+    "isActive": true,
+    "createdAt": "2026-11-16T16:59:20.455Z"
+  },
+  {
+    "_id": "usr_mwjidef4",
+    "name": "Ayush Deval",
+    "email": "test_auto_1794848360391@velvi.com",
+    "password": "$2a$10$9IvPJlNkVFttM6WBumCG3evJLU6grJlvLhwOVVBZL/4odEntxSPdC",
+    "phone": "+919451155771",
+    "role": "user",
+    "isActive": true,
+    "createdAt": "2026-11-16T16:59:20.512Z"
+  }
+]

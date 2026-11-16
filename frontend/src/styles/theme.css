@@ -1,0 +1,63 @@
+/* Theme colors for Velvi Naturals */
+:root {
+  --color-primary: #2E8B57;   /* natural green */
+  --color-cream:   #FFF5E1;   /* cream */
+  --color-gold:    #D4AF37;   /* gold */
+  --font-family-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Global resets and typography */
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-cream);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+.btn-primary:hover {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+/* Card styling for premium product cards */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
